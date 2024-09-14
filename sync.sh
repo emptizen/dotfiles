@@ -2,7 +2,6 @@
 
 # Change to the directory of the current script
 cd "$(dirname "$0")"
-
 # Function to merge files
 sync_file() {
     local source="$1"
