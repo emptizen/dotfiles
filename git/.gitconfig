@@ -1,0 +1,28 @@
+[alias]
+  st = status -s
+  ci = commit
+  l = log --oneline --decorate -12 --color
+  ll = log --oneline --decorate --color
+  lc = log --graph --color
+  co = checkout
+  br = branch
+  rb = rebase
+  dci = dcommit
+  sbi = submodule init
+  sbu = submodule update
+  sbp = submodule foreach git pull
+  sbc = submodule foreach git co master
+[core]
+	autocrlf = input
+[http]
+	sslVerify = false
+	postBuffer = 157286400
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[user]
+	name = emptizen
+	email = emptizen.li@gmail.com
