@@ -44,7 +44,7 @@ curl -s "https://get.sdkman.io" | bash \
 && echo "sdkman installed"
 
 # Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash \
 && echo "nvm installed"
 
 
