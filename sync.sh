@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
 
-chmod +x "$0"
 
 # Function to merge files
 sync_file() {

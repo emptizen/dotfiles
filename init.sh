@@ -1,11 +1,14 @@
 #! /usr/bin/env bash
 
-chmod +x "$0"
+chmod +x init.sh
+# Add execute permission for all scripts
+chmod +x sync.sh
 
 # Add crontab entry to execute sync.sh daily at 12:00 and 23:00
 (crontab -l 2>/dev/null; echo "0 9,12,23 * * * $PWD/sync.sh") | crontab -
 
-echo "Crontab entry added to execute sync.sh daily at 12:00 and 23:00"
+echo "Crontab entry added to execute sync.sh daily at 9:00,12:00 and 23:00"
+
 
 # Function to check if file exists and prompt for override
 check_and_copy() {
