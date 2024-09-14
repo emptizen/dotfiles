@@ -39,6 +39,14 @@ curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 && echo "vim-plug installed"
 
+# Install sdkman
+curl -s "https://get.sdkman.io" | bash \
+&& echo "sdkman installed"
+
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
+&& echo "nvm installed"
+
 
 # Check and copy each dotfile
 check_and_copy "git/.gitconfig" "$HOME/.gitconfig"
