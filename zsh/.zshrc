@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/infiniteme/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 source ~/.bash_profile 
 
@@ -139,8 +139,6 @@ export PATH="/usr/local/sbin:$PATH"
 #export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/infiniteme/.sdkman"
-[[ -s "/Users/infiniteme/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/infiniteme/.sdkman/bin/sdkman-init.sh"
-export PATH="/usr/local/opt/node@12/bin:$PATH"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
