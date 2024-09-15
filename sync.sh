@@ -23,6 +23,22 @@ sync_file "$HOME/.zshrc" "zsh/.zshrc"
 
 echo "Dotfiles have been synced from your home directory to the "$PWD" directory."
 
-git add . || echo "No changes to commit"
-git commit -m "Sync dotfiles $(date "+%Y-%m-%d %H:%M:%S")" || echo "No changes to commit"
-git push || echo "Failed to push changes"
+# Check if there are changes to commit
+if git diff-index --quiet HEAD --; then
+    echo "No changes to commit"
+else
+    # Add all changes
+    git add .
+    
+    # Commit changes with timestamp
+    if git commit -m "Sync dotfiles $(date "+%Y-%m-%d %H:%M:%S")"; then
+        # Push changes if commit was successful
+        if git push; then
+            echo "Changes pushed successfully"
+        else
+            echo "Failed to push changes"
+        fi
+    else
+        echo "Failed to commit changes"
+    fi
+fi
