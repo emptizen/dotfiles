@@ -18,6 +18,12 @@ function add_cronjob() {
     fi
 }
 
+
+# write a function to clean up the crontab entry
+
+
+
+
 # Function to check if file exists and prompt for override
 check_and_copy() {
     local source="$1"
