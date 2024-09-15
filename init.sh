@@ -5,8 +5,13 @@ chmod +x init.sh
 chmod +x sync.sh
 
 # Add crontab entry to execute sync.sh every minute
-(crontab -l 2>/dev/null; echo "* * * * * $PWD/sync.sh") | crontab -
-echo "Crontab entry added to execute sync.sh every minute"
+# Check if the crontab entry already exists
+if ! crontab -l 2>/dev/null | grep -q "$PWD/sync.sh"; then
+    (crontab -l 2>/dev/null; echo "* * * * * $PWD/sync.sh") | crontab -
+    echo "Crontab entry added to execute sync.sh every minute"
+else
+    echo "Crontab entry for sync.sh already exists"
+fi
 
 
 # Function to check if file exists and prompt for override
