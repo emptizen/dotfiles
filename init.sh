@@ -6,7 +6,7 @@ chmod +x sync.sh
 
 function add_cronjob() {
     # Add crontab entry to execute sync.sh every minute
-    local script_path="$1"
+    local script_path="${PWD}/sync.sh"
     # Check if the crontab entry already exists
     if ! crontab -l 2>/dev/null | grep -q "$script_path"; then
         (
@@ -69,7 +69,7 @@ install_nvm() {
 }
 
 # Call the functions to install each tool
-add_cronjob "${PWD}/sync.sh"
+add_cronjob 
 install_homebrew
 install_oh_my_zsh
 install_vim_plug
