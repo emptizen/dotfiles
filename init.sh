@@ -20,6 +20,17 @@ function add_cronjob() {
 
 
 # write a function to clean up the crontab entry
+function remove_cronjob() {
+    local script_path="${PWD}/sync.sh"
+    # Check if the crontab entry exists
+    if crontab -l 2>/dev/null | grep -q "$script_path"; then
+        # Remove the crontab entry
+        crontab -l | grep -v "$script_path" | crontab -
+        echo "Crontab entry for $script_path removed"
+    else
+        echo "Crontab entry for $script_path does not exist"
+    fi
+}‘
 
 
 
