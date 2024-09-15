@@ -1,8 +1,7 @@
 #! /usr/bin/env bash
 
 # Add execute permission for all scripts
-chmod +x init.sh
-chmod +x sync.sh
+find . -name "*.sh" -type f -exec chmod +x {} +
 
 function add_cronjob() {
     # Add crontab entry to execute sync.sh every minute
