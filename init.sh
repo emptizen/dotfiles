@@ -4,7 +4,7 @@
 chmod +x init.sh
 chmod +x sync.sh
 
-function add_crontab_entry() {
+function add_cronjob() {
     # Add crontab entry to execute sync.sh every minute
     local script_path="$1"
     # Check if the crontab entry already exists
@@ -37,27 +37,44 @@ check_and_copy() {
         echo "Copied $source to $target"
     fi
 }
+# Function to install Homebrew
+install_homebrew() {
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
+        echo "Homebrew installed"
+}
 
-# Install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
-    echo "Homebrew installed"
+# Function to install oh-my-zsh
+install_oh_my_zsh() {
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
+        echo "oh-my-zsh installed"
+}
 
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
-    echo "oh-my-zsh installed"
+# Function to install vim-plug
+install_vim_plug() {
+    curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&
+        echo "vim-plug installed"
+}
 
-# Install vim-plug
-curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&
-    echo "vim-plug installed"
+# Function to install sdkman
+install_sdkman() {
+    curl -s "https://get.sdkman.io" | bash &&
+        echo "sdkman installed"
+}
 
-# Install sdkman
-curl -s "https://get.sdkman.io" | bash &&
-    echo "sdkman installed"
+# Function to install nvm
+install_nvm() {
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash &&
+        echo "nvm installed"
+}
 
-# Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash &&
-    echo "nvm installed"
+# Call the functions to install each tool
+add_cronjob "${PWD}/sync.sh"
+install_homebrew
+install_oh_my_zsh
+install_vim_plug
+install_sdkman
+install_nvm
 
 # Check and copy each dotfile
 check_and_copy "git/.gitconfig" "$HOME/.gitconfig"
