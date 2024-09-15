@@ -4,15 +4,15 @@
 find . -name "*.sh" -type f -exec chmod +x {} +
 
 function add_cronjob() {
-    # Add crontab entry to execute sync.sh every minute
+    # Add crontab entry to execute sync.sh every 5 minutes
     local script_path="${PWD}/sync.sh"
     # Check if the crontab entry already exists
     if ! crontab -l 2>/dev/null | grep -q "$script_path"; then
         (
             crontab -l 2>/dev/null
-            echo "* * * * * $script_path"
+            echo "*/5 * * * * $script_path"
         ) | crontab -
-        echo "Crontab entry added to execute $script_path every minute"
+        echo "Crontab entry added to execute $script_path every 5 minutes"
     else
         echo "Crontab entry for $script_path already exists"
     fi
