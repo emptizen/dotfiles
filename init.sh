@@ -39,18 +39,21 @@ check_and_copy() {
 }
 # Function to install Homebrew
 install_homebrew() {
+    echo "Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
         echo "Homebrew installed"
 }
 
 # Function to install oh-my-zsh
 install_oh_my_zsh() {
+    echo "Installing oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
         echo "oh-my-zsh installed"
 }
 
 # Function to install vim-plug
 install_vim_plug() {
+    echo "Installing vim-plug"
     curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&
         echo "vim-plug installed"
@@ -58,12 +61,14 @@ install_vim_plug() {
 
 # Function to install sdkman
 install_sdkman() {
+    echo "Installing sdkman"
     curl -s "https://get.sdkman.io" | bash &&
         echo "sdkman installed"
 }
 
 # Function to install nvm
 install_nvm() {
+    echo "Installing nvm"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash &&
         echo "nvm installed"
 }
