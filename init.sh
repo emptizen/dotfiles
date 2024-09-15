@@ -147,6 +147,8 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+
+function 
 # Check and copy each dotfile
 check_and_copy "git/.gitconfig" "$HOME/.gitconfig"
 check_and_copy "vim/.vimrc" "$HOME/.vimrc"
