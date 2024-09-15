@@ -73,49 +73,18 @@ install_nvm() {
         echo "nvm installed"
 }
 
-# Parse command line options
-while [[ $# -gt 0 ]]; do
-    case $1 in
-        cronjob) add_cronjob ;;
-        homebrew) install_homebrew ;;
-        ohmyzsh) install_oh_my_zsh ;;
-        vimplug) install_vim_plug ;;
-        sdkman) install_sdkman ;;
-        nvm) install_nvm ;;
-        all)
-            add_cronjob
-            install_homebrew
-            install_oh_my_zsh
-            install_vim_plug
-            install_sdkman
-            install_nvm
-            ;;
-        *)
-            echo "Unknown option: $1"
-            exit 1
-            ;;
-    esac
-    shift
-done
-
-# If no options were provided, display usage
-if [ $# -eq 0 ]; then
-    echo "Usage: $0 [cronjob] [homebrew] [ohmyzsh] [vimplug] [sdkman] [nvm] [all]"
-    echo "Options:"
-    echo "  cronjob:  Add cronjob"
-    echo "  homebrew: Install Homebrew"
-    echo "  ohmyzsh:  Install oh-my-zsh"
-    echo "  vimplug:  Install vim-plug"
-    echo "  sdkman:   Install sdkman"
-    echo "  nvm:      Install nvm"
-    echo "  all:      Install all tools"
-fi
+# Call the functions to install each tool
+add_cronjob 
+install_homebrew
+install_oh_my_zsh
+install_vim_plug
+install_sdkman
+install_nvm
 
 # Check and copy each dotfile
 check_and_copy "git/.gitconfig" "$HOME/.gitconfig"
 check_and_copy "vim/.vimrc" "$HOME/.vimrc"
 check_and_copy "zsh/.zshrc" "$HOME/.zshrc"
-
 
 
 echo "Dotfiles for git, vim, and zsh have been copied to your home directory."
