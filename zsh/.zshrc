@@ -130,9 +130,8 @@ alias conf='vim ~/dev/conf/'
 # HomeBrew
 # export HOMEBREW_NO_AUTO_UPDATE=true
 # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-(/opt/homebrew/bin/brew shellenv
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # HomeBrew END
 
 export NVM_DIR="$HOME/.nvm"
