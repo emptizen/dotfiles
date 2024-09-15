@@ -31,13 +31,10 @@ else
     git add .
     
     # Commit changes with timestamp
-    # Generate commit summary
-    commit_summary=$(git diff --cached --name-only | sed -e 's/^/- /' | tr '\n' ' ')
-    if git commit -m "Sync dotfiles $(date "+%Y-%m-%d %H:%M:%S")" -m "Changes: $commit_summary"; then
+    if git commit -m "Sync dotfiles $(date "+%Y-%m-%d %H:%M:%S")"; then
         # Push changes if commit was successful
         if git push; then
             echo "Changes pushed successfully"
-            echo "Commit summary: $commit_summary"
         else
             echo "Failed to push changes"
         fi
