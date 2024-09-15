@@ -6,13 +6,13 @@ This repository contains scripts and configuration files to manage your dotfiles
 
 - Initialize and sync dotfiles
 - Install various development tools
-- Set up cron jobs for automatic syncing
+- Set up cron jobs for automatic syncing local dotfiles to remote repository
 
 ## Installation
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/dotfiles.git
+   git clone https://github.com/emptizen/dotfiles.git
    cd dotfiles
    ```
 
@@ -26,6 +26,16 @@ This repository contains scripts and configuration files to manage your dotfiles
 ### Initialization
 
 To set up your dotfiles and install development tools, run:
+```zsh
+./init.sh
+```
+
+### Syncing
+
+To sync your dotfiles, run:
+```zsh
+./sync.sh
+```
 
 
 
