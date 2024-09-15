@@ -86,4 +86,5 @@ check_and_copy "git/.gitconfig" "$HOME/.gitconfig"
 check_and_copy "vim/.vimrc" "$HOME/.vimrc"
 check_and_copy "zsh/.zshrc" "$HOME/.zshrc"
 
+
 echo "Dotfiles for git, vim, and zsh have been copied to your home directory."
