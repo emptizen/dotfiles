@@ -165,53 +165,6 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-while [[ $# -gt 0 ]]; do
-    case "$1" in
-        cronjob)
-            add_cronjob
-            shift
-            ;;
-        homebrew)
-            install_homebrew
-            shift
-            ;;
-        oh-my-zsh)
-            install_oh_my_zsh
-            shift
-            ;;
-        vim-plug)
-            install_vim_plug
-            shift
-            ;;
-        sdkman)
-            install_sdkman
-            shift
-            ;;
-        nvm)
-            install_nvm
-            shift
-            ;;
-        all)
-            add_cronjob
-            install_homebrew
-            install_oh_my_zsh
-            install_vim_plug
-            install_sdkman
-            install_nvm
-            shift
-            ;;
-        -h|--help)
-            display_usage
-            exit 0
-            ;;
-        *)
-            echo "Error: Unknown option: $1"
-            display_usage
-            exit 1
-            ;;
-    esac
-done
-
 
 
 
