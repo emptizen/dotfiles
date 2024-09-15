@@ -73,6 +73,15 @@ install_nvm() {
         echo "nvm installed"
 }
 
+function install_dotfiles() {
+    # Check and copy each dotfile
+    check_and_copy "git/.gitconfig" "$HOME/.gitconfig"
+    check_and_copy "vim/.vimrc" "$HOME/.vimrc"
+    check_and_copy "zsh/.zshrc" "$HOME/.zshrc"
+
+    echo "Dotfiles for git, vim, and zsh have been copied to your home directory."
+}
+
 # Function to display usage information
 display_usage() {
     echo "Usage: $0 [OPTIONS]"
@@ -85,6 +94,7 @@ display_usage() {
     echo "  vim-plug   Install vim-plug plugin manager for Vim"
     echo "  sdkman     Install SDKMAN! for managing parallel versions of multiple Software Development Kits"
     echo "  nvm        Install Node Version Manager for managing Node.js versions"
+    echo "  dotfiles   Install dotfiles for git, vim, and zsh"
     echo "  all        Install and configure all of the above options"
     echo
     echo "You can specify multiple options. If no option is provided, this help message will be displayed."
@@ -93,6 +103,61 @@ display_usage() {
     echo "  $0 homebrew vim-plug        # Install Homebrew and vim-plug"
     echo "  $0 all                      # Install and configure everything"
 }
+
+# Parse command line options
+if [ $# -eq 0 ]; then
+    display_usage
+    exit 1
+fi
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        cronjob)
+            add_cronjob
+            shift
+            ;;
+        homebrew)
+            install_homebrew
+            shift
+            ;;
+        oh-my-zsh)
+            install_oh_my_zsh
+            shift
+            ;;
+        vim-plug)
+            install_vim_plug
+            shift
+            ;;
+        sdkman)
+            install_sdkman
+            shift
+            ;;
+        nvm)
+            install_nvm
+            shift
+            ;;
+        dotfiles)
+            install_dotfiles
+            shift
+            ;;
+        all)
+            add_cronjob
+            install_homebrew
+            install_oh_my_zsh
+            install_vim_plug
+            install_sdkman
+            install_nvm
+            install_dotfiles
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            display_usage
+            exit 1
+            ;;
+    esac
+done
+
 
 # Parse command line options
 if [ $# -eq 0 ]; then
@@ -148,11 +213,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 
-function 
-# Check and copy each dotfile
-check_and_copy "git/.gitconfig" "$HOME/.gitconfig"
-check_and_copy "vim/.vimrc" "$HOME/.vimrc"
-check_and_copy "zsh/.zshrc" "$HOME/.zshrc"
 
 
 echo "Dotfiles for git, vim, and zsh have been copied to your home directory."
