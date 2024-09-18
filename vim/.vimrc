@@ -361,30 +361,6 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 
-" Function to search for the selected text
-function! SearchSelectedText()
-  " Save the current search register
-  let l:old_search = @/
-
-  " Yank the selected text into the search register
-  normal! "vy
-
-  " Escape special characters in the search pattern
-  let @/ = '\V' . escape(@v, '\/.*$^~[]')
-
-  " Start the search
-  normal! n
-
-  " Restore the old search register
-  let @/ = l:old_search
-endfunction
-
-" Map the function to a key combination in Visual mode
-" vnoremap <leader>f :<C-u>call SearchSelectedText()<CR>
-vnoremap <leader>f :echo 'hello world'
-
-
-
 
 
 " short document 
