@@ -25,7 +25,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 map <leader>q :q!<cr>
 
 " nohl
-nmap <leader>nh :nohl<cr>
+nnoremap <leader>nn :nohl<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
