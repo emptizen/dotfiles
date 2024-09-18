@@ -380,9 +380,11 @@ function! SearchSelectedText()
 endfunction
 
 " Map the function to a key combination in Visual mode
-vnoremap <silent> <leader>f :<C-u>call SearchSelectedText()<CR>
+" vnoremap <leader>f :<C-u>call SearchSelectedText()<CR>
+vnoremap <leader>f :echo 'hello world'
 
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+
 
 
 " short document 
