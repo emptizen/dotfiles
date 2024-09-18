@@ -24,9 +24,6 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " close without save
 map <leader>q :q!<cr>
 
-" nohl
-nnoremap <leader>nn :nohl<cr>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -384,6 +381,8 @@ endfunction
 
 " Map the function to a key combination in Visual mode
 vnoremap <silent> <leader>f :<C-u>call SearchSelectedText()<CR>
+
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 
 " short document 
