@@ -3,8 +3,8 @@ call plug#begin()
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-sleuth'
   Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-  Plug 'preservim/nerdcommenter'
   Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'preservim/nerdcommenter'
   Plug 'easymotion/vim-easymotion'
 call plug#end()
 
@@ -22,7 +22,6 @@ nmap <leader>w :w!<cr>
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " close without save
-ma
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
