@@ -2,6 +2,7 @@
 call plug#begin()
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-sleuth'
+  Plug 'tpope/vim-surround'
   Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'preservim/nerdcommenter'
