@@ -84,8 +84,9 @@ function install_dotfiles() {
     check_and_copy "git/.gitconfig" "$HOME/.gitconfig"
     check_and_copy "vim/.vimrc" "$HOME/.vimrc"
     check_and_copy "zsh/.zshrc" "$HOME/.zshrc"
+    check_and_copy "idea/.ideavimrc" "$HOME/.ideavimrc"
 
-    echo "Dotfiles for git, vim, and zsh have been copied to your home directory."
+    echo "Dotfiles for git, vim, zsh and IDEA have been copied to your home directory."
 }
 
 # Function to display usage information
@@ -170,7 +171,6 @@ if [ $# -eq 0 ]; then
     display_usage
     exit 1
 fi
-
 
 
 
