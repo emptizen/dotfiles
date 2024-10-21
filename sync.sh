@@ -10,7 +10,9 @@ sync_file() {
     if [ ! -f "$source" ]; then
         echo "Source file $source does not exist. Skipping."
     elif [ ! -f "$target" ]; then
-        echo "Target file $target does not exist. Skipping."
+        echo "Target file $target does not exist. Creating necessary directories and file."
+        mkdir -p "$(dirname "$target")"
+        touch "$target"
     else
         echo "Syncing $source to $target"
         cp "$source" "$target"
