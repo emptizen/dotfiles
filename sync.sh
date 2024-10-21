@@ -20,7 +20,7 @@ sync_file() {
 sync_file "$HOME/.gitconfig" "git/.gitconfig"
 sync_file "$HOME/.vimrc" "vim/.vimrc"
 sync_file "$HOME/.zshrc" "zsh/.zshrc"
-sync_file "$HOME/.ideavimrc" "idea/.zshrc"
+sync_file "$HOME/.ideavimrc" "idea/.ideavimrc"
 
 echo "Dotfiles have been synced from your home directory to the "$PWD" directory."
 
