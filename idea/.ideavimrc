@@ -18,7 +18,7 @@ set showmode
 set so=5
 set incsearch
 set nu
-set smartcase
+set ignorecase
 
 """ Idea specific settings ------------------
 set ideajoin
