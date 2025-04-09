@@ -37,7 +37,7 @@ map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>s <Action>(SelectInProjectView)
 map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <leader-Space> <Action>(GotoNextError)
+map <leader><Space> <Action>(GotoNextError)
 
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>o <Action>(FileStructurePopup)
