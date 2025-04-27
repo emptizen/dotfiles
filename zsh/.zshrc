@@ -97,22 +97,10 @@ export LANG=en_US.UTF-8
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias proxy="
-    export http_proxy=http://127.0.0.1:1087;
-    export https_proxy=http://127.0.0.1:1087;
-    export all_proxy=http://127.0.0.1:1087;
-    export HTTP_PROXY=http://127.0.0.1:1087;
-    export HTTPS_PROXY=http://127.0.0.1:1087;
-    export ALL_PROXY=http://127.0.0.1:1087;
-    "
-alias unproxy="
-    unset http_proxy;
-    unset https_proxy;
-    unset all_proxy;
-    unset HTTP_PROXY;
-    unset HTTPS_PROXY;
-    unset ALL_PROXY;
-    "
+
+
+# proxy
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
 #alias for cnpm
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
