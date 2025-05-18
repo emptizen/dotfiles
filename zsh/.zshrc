@@ -100,7 +100,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 
 # proxy
-export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+# export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
 #alias for cnpm
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
